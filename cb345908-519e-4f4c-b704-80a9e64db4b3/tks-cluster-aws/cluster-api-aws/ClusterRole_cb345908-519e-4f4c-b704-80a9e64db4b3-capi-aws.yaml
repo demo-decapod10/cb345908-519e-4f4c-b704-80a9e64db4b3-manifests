@@ -1,0 +1,18 @@
+# Source: cluster-api-aws/templates/rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cb345908-519e-4f4c-b704-80a9e64db4b3-capi-aws
+rules:
+- apiGroups:
+  - 'apiextensions.k8s.io'
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get

@@ -1,0 +1,15 @@
+# Source: cluster-autoscaler/templates/rbac-for-mgmt-cluster-access.yaml
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-autoscaler-management
+  namespace: cb345908-519e-4f4c-b704-80a9e64db4b3
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: cluster-autoscaler-management
+subjects:
+- kind: ServiceAccount
+  name: cluster-autoscaler
+  namespace: cb345908-519e-4f4c-b704-80a9e64db4b3
+
